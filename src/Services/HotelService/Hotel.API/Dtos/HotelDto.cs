@@ -1,6 +1,8 @@
-﻿namespace Hotel.API.Entities
+﻿using Hotel.API.Entities;
+
+namespace Hotel.API.Dtos
 {
-    public class Hotel : BaseEntity
+    public class HotelDto
     {
         public string AuthorizedFirstName { get; set; }
         public string AuthorizedLastName { get; set; }

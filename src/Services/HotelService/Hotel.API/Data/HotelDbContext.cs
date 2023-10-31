@@ -6,8 +6,11 @@ namespace Hotel.API.Data
     public class HotelDbContext : DbContext
     {
         public DbSet<Entities.Hotel> Hotels { get; set; }
-        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<ContactInfo> ContactInfos { get; set; }
 
+        public HotelDbContext(DbContextOptions<HotelDbContext> options) : base(options)
+        {
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -27,7 +30,7 @@ namespace Hotel.API.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Entities.Hotel>().HasKey(x => x.UUID);
-            modelBuilder.Entity<Contact>().HasKey(x => x.UUID);
+            modelBuilder.Entity<ContactInfo>().HasKey(x => x.UUID);
 
         }
     }

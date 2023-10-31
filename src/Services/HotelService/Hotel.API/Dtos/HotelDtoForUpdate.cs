@@ -1,10 +1,9 @@
-﻿namespace Hotel.API.Entities
+﻿namespace Hotel.API.Dtos
 {
-    public class Hotel : BaseEntity
+    public class HotelDtoForUpdate
     {
         public string AuthorizedFirstName { get; set; }
         public string AuthorizedLastName { get; set; }
         public string CompanyTitle { get; set; }
-        public List<ContactInfo> ContactInfos { get; set; } = new();
     }
 }

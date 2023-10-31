@@ -1,34 +1,25 @@
+using Hotel.API.Dtos;
+using Hotel.API.Managers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Hotel.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/hotels")]
     public class HotelController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
+        private readonly IHotelManager _hotelManager;
+        public HotelController(IHotelManager hotelManager)
         {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
-
-        private readonly ILogger<HotelController> _logger;
-
-        public HotelController(ILogger<HotelController> logger)
-        {
-            _logger = logger;
+            _hotelManager = hotelManager;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<object> Get()
+        [HttpPost(Name = "CreateHotelAsync")]
+        public async Task<IActionResult> CreateHotelAsync([FromBody] HotelDtoForInsert hotelDtoForInsert)
         {
-            return null;
-            //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            //{
-            //    Date = DateTime.Now.AddDays(index),
-            //    TemperatureC = Random.Shared.Next(-20, 55),
-            //    Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            //})
-            //.ToArray();
+            var hotel = await _hotelManager.CreateHotelAsync(hotelDtoForInsert);
+            return StatusCode(201, hotel);
         }
+
     }
 }

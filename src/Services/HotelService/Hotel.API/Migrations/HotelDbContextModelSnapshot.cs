@@ -22,7 +22,7 @@ namespace Hotel.API.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Hotel.API.Entities.Contact", b =>
+            modelBuilder.Entity("Hotel.API.Entities.ContactInfo", b =>
                 {
                     b.Property<Guid>("UUID")
                         .ValueGeneratedOnAdd()
@@ -37,6 +37,9 @@ namespace Hotel.API.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid?>("HotelUUID")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<int>("ModifiedBy")
                         .HasColumnType("int");
 
@@ -48,7 +51,9 @@ namespace Hotel.API.Migrations
 
                     b.HasKey("UUID");
 
-                    b.ToTable("Contacts");
+                    b.HasIndex("HotelUUID");
+
+                    b.ToTable("ContactInfos");
                 });
 
             modelBuilder.Entity("Hotel.API.Entities.Hotel", b =>
@@ -81,6 +86,20 @@ namespace Hotel.API.Migrations
                     b.HasKey("UUID");
 
                     b.ToTable("Hotels");
+                });
+
+            modelBuilder.Entity("Hotel.API.Entities.ContactInfo", b =>
+                {
+                    b.HasOne("Hotel.API.Entities.Hotel", "Hotel")
+                        .WithMany("ContactInfos")
+                        .HasForeignKey("HotelUUID");
+
+                    b.Navigation("Hotel");
+                });
+
+            modelBuilder.Entity("Hotel.API.Entities.Hotel", b =>
+                {
+                    b.Navigation("ContactInfos");
                 });
 #pragma warning restore 612, 618
         }
