@@ -4,6 +4,7 @@ using Hotel.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hotel.API.Migrations
 {
     [DbContext(typeof(HotelDbContext))]
-    partial class HotelDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231031233400_seed_data")]
+    partial class seed_data
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,10 +60,10 @@ namespace Hotel.API.Migrations
                     b.HasData(
                         new
                         {
-                            UUID = new Guid("94ac9ba1-95b3-4897-a916-8fe73f62338f"),
+                            UUID = new Guid("b3d3a8f0-a1ae-4dae-8d9f-40d784bd3701"),
                             CreatedBy = 0,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            HotelUUID = new Guid("420ec3c7-d391-427b-a552-51ce4b10566d"),
+                            HotelUUID = new Guid("db944df0-2aff-4b98-8a1f-f2c9f5266c05"),
                             InfoContent = "0 555 4443322",
                             InfoType = 0,
                             ModifiedBy = 0,
@@ -69,10 +71,10 @@ namespace Hotel.API.Migrations
                         },
                         new
                         {
-                            UUID = new Guid("ec68cf17-c934-4197-a0b5-4cc570f0dbbd"),
+                            UUID = new Guid("c1aa7e25-3381-4bdd-bda7-c84e296b5483"),
                             CreatedBy = 0,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            HotelUUID = new Guid("420ec3c7-d391-427b-a552-51ce4b10566d"),
+                            HotelUUID = new Guid("db944df0-2aff-4b98-8a1f-f2c9f5266c05"),
                             InfoContent = "sunhotel@mail.com",
                             InfoType = 1,
                             ModifiedBy = 0,
@@ -80,10 +82,10 @@ namespace Hotel.API.Migrations
                         },
                         new
                         {
-                            UUID = new Guid("7daf6641-6296-48b9-9ed7-64f2201cd8dd"),
+                            UUID = new Guid("4b5d54b7-f691-43d7-86f7-cf9cea2168c6"),
                             CreatedBy = 0,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            HotelUUID = new Guid("420ec3c7-d391-427b-a552-51ce4b10566d"),
+                            HotelUUID = new Guid("db944df0-2aff-4b98-8a1f-f2c9f5266c05"),
                             InfoContent = "Antalya",
                             InfoType = 2,
                             ModifiedBy = 0,
@@ -91,10 +93,10 @@ namespace Hotel.API.Migrations
                         },
                         new
                         {
-                            UUID = new Guid("b6b00304-0f18-425f-954d-3b49b038d1a5"),
+                            UUID = new Guid("aaab279f-cc5b-4d65-9da2-a8af1318d72c"),
                             CreatedBy = 0,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            HotelUUID = new Guid("88aafd58-de2c-4a72-968b-0c6d19aff73a"),
+                            HotelUUID = new Guid("fdc54ea8-9bae-465b-9ab5-e48e55fd9567"),
                             InfoContent = "0 533 5558899",
                             InfoType = 0,
                             ModifiedBy = 0,
@@ -102,10 +104,10 @@ namespace Hotel.API.Migrations
                         },
                         new
                         {
-                            UUID = new Guid("8791bc29-3131-49fe-8402-def6f70d6073"),
+                            UUID = new Guid("41a6ed10-888b-4a82-b5f4-60f6475b0a9c"),
                             CreatedBy = 0,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            HotelUUID = new Guid("88aafd58-de2c-4a72-968b-0c6d19aff73a"),
+                            HotelUUID = new Guid("fdc54ea8-9bae-465b-9ab5-e48e55fd9567"),
                             InfoContent = "moonhotel@mail.com",
                             InfoType = 1,
                             ModifiedBy = 0,
@@ -113,10 +115,10 @@ namespace Hotel.API.Migrations
                         },
                         new
                         {
-                            UUID = new Guid("b3d0cb13-7431-4d83-af33-29d47e2ecc9a"),
+                            UUID = new Guid("da9f948b-e7d3-410a-871c-177a05952335"),
                             CreatedBy = 0,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            HotelUUID = new Guid("8523d2e4-4f63-4524-953e-df3bb596681b"),
+                            HotelUUID = new Guid("e411a7cc-1974-4540-a06e-58dbbc7b0ab4"),
                             InfoContent = "royalhotel@mail.com",
                             InfoType = 1,
                             ModifiedBy = 0,
@@ -158,7 +160,7 @@ namespace Hotel.API.Migrations
                     b.HasData(
                         new
                         {
-                            UUID = new Guid("420ec3c7-d391-427b-a552-51ce4b10566d"),
+                            UUID = new Guid("db944df0-2aff-4b98-8a1f-f2c9f5266c05"),
                             AuthorizedFirstName = "Ali",
                             AuthorizedLastName = "Demir",
                             CompanyTitle = "Sun Hotel",
@@ -169,10 +171,10 @@ namespace Hotel.API.Migrations
                         },
                         new
                         {
-                            UUID = new Guid("88aafd58-de2c-4a72-968b-0c6d19aff73a"),
+                            UUID = new Guid("fdc54ea8-9bae-465b-9ab5-e48e55fd9567"),
                             AuthorizedFirstName = "Veli",
                             AuthorizedLastName = "Öz",
-                            CompanyTitle = "Moon Hotel",
+                            CompanyTitle = "Sun Hotel",
                             CreatedBy = 0,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ModifiedBy = 0,
@@ -180,7 +182,7 @@ namespace Hotel.API.Migrations
                         },
                         new
                         {
-                            UUID = new Guid("8523d2e4-4f63-4524-953e-df3bb596681b"),
+                            UUID = new Guid("e411a7cc-1974-4540-a06e-58dbbc7b0ab4"),
                             AuthorizedFirstName = "Ahmet",
                             AuthorizedLastName = "Duman",
                             CompanyTitle = "Royal Hotel",
@@ -193,11 +195,13 @@ namespace Hotel.API.Migrations
 
             modelBuilder.Entity("Hotel.API.Entities.ContactInfo", b =>
                 {
-                    b.HasOne("Hotel.API.Entities.Hotel", null)
+                    b.HasOne("Hotel.API.Entities.Hotel", "Hotel")
                         .WithMany("ContactInfos")
                         .HasForeignKey("HotelUUID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Hotel");
                 });
 
             modelBuilder.Entity("Hotel.API.Entities.Hotel", b =>

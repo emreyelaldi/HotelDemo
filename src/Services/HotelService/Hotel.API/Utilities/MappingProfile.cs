@@ -8,8 +8,10 @@ namespace Hotel.API.Utilities
         public MappingProfile()
         {
             CreateMap<HotelDtoForInsert, Entities.Hotel>();
-            CreateMap<Entities.Hotel, HotelDto>();
             CreateMap<HotelDtoForUpdate, Entities.Hotel>();
+
+            CreateMap<Entities.Hotel, HotelDto>().ReverseMap();
+            CreateMap<Entities.Hotel, HotelWithDetailDto>().ReverseMap();
 
         }
     }

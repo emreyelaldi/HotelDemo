@@ -1,10 +1,9 @@
 ﻿using Hotel.API.Enums;
 
-namespace Hotel.API.Entities
+namespace Hotel.API.Dtos
 {
-    public class ContactInfo : BaseEntity
+    public class ContactInfoDtoForUpdate
     {
-        public Guid HotelUUID { get; set; }
         public InfoType InfoType { get; set; }
         public string InfoContent { get; set; }
     }
